@@ -64,10 +64,6 @@ export class MarcadoresComponent implements AfterViewInit {
 
   }
 
-  irMarcador(){
-
-  }
-
   agregarMarcador(){
 
     const color = "#xxxxxx".replace(/x/g, y=>(Math.random()*16|0).toString(16));
@@ -80,6 +76,22 @@ export class MarcadoresComponent implements AfterViewInit {
     .addTo(this.mapa);
 
     this.marcadores.push({color,  marker: nuevoMarcador})
+  }
+
+  irMarcador(marcador: MarcadorColor){
+    this.mapa.flyTo({
+      center: marcador.marker.getLngLat()
+    })
+  }
+
+  guardarMarcadoresLocalSotrage(){
+
+    
+
+  }
+
+  leerLocalStorage(){
+
   }
 
 }
